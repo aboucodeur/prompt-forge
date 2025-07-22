@@ -1,0 +1,18 @@
+{
+  "types": [
+    {"type": "feat", "section": "New features"},
+    {"type": "fix", "section": "Fixes bugs"},
+    {"type": "docs", "section": "Documentation"},
+    {"type": "style", "section": "Styles"},
+    {"type": "refactor", "section": "Refactoring"},
+    {"type": "perf", "section": "Performance"},
+    {"type": "test", "section": "Tests"},
+    {"type": "chore", "section": "Chores"}
+  ],
+  "commitUrlFormat": "https://github.com/aboucodeur/prompt-forge/commit/{{hash}}",
+  "compareUrlFormat": "https://github.com/aboucodeur/prompt-forge/compare/{{previousTag}}...{{currentTag}}",
+  "bumpFiles": [
+    {"filename": "package.json", "type": "json"},
+    {"filename": "package-lock.json", "type": "json"}
+  ]
+}

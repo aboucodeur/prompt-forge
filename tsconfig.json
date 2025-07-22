@@ -1,17 +1,28 @@
 {
     "compilerOptions": {
-        "target": "ES2020", // Cible un JavaScript moderne mais compatible
-        "module": "CommonJS", // Le format de module le plus compatible pour Node.js
-        "declaration": true, // !! TRÈS IMPORTANT : Génère les fichiers .d.ts pour l'autocomplétion
-        "outDir": "./dist", // Le dossier où le JS compilé sera placé
-        "rootDir": "./src", // Le dossier racine de votre code source TS
-        "strict": true, // Active toutes les vérifications de type strictes (bonne pratique)
-        "esModuleInterop": true, // Améliore l'interopérabilité entre CommonJS et les modules ES
-        "skipLibCheck": true, // Évite la vérification de type des fichiers de déclaration
-        "forceConsistentCasingInFileNames": true
+        "target": "ES2020",
+        "module": "CommonJS",
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true
     },
-    "include": ["src"], // N'inclut que le dossier src dans la compilation
-    "exclude": ["node_modules", "dist", "tests"] // Exclut ces dossiers
+    "include": ["src"],
+    "exclude": ["node_modules", "dist", "tests", "**/*.test.ts"]
 }
 
 // default settings

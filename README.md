@@ -15,6 +15,37 @@ Managing complex prompts as simple strings is messy and error-prone. Heavy frame
 - ✅ **Robust:** Validates prompts to prevent errors.
 - ✅ **Maintainable:** Separates logic, structure, and data.
 
+## Gestion des versions
+
+Ce projet utilise [standard-version](https://github.com/conventional-changelog/standard-version) pour la gestion automatique des versions et la génération des notes de version.
+
+### Commandes disponibles
+
+- `pnpm run release` : Crée une nouvelle version en fonction des commits (détermine automatiquement le type de version)
+- `pnpm run release:patch` : Crée une version de correctif (0.0.x)
+- `pnpm run release:minor` : Crée une version mineure (0.x.0)
+- `pnpm run release:major` : Crée une version majeure (x.0.0)
+- `pnpm run release:first` : Crée la première version du projet
+
+### Convention de commits
+
+Pour une gestion optimale des versions, suivez ces conventions de commit :
+
+- `feat:` Nouvelle fonctionnalité (incrémente la version mineure)
+- `fix:` Correction de bug (incrémente la version de correctif)
+- `docs:` Mise à jour de la documentation
+- `style:` Changements de formatage (espace, point-virgule, etc.)
+- `refactor:` Refactorisation du code sans changement de fonctionnalité
+- `perf:` Amélioration des performances
+- `test:` Ajout ou modification de tests
+- `chore:` Mise à jour des tâches de construction, configuration, etc.
+
+Exemple :
+
+```bash
+git commit -m "feat: ajout d'une nouvelle méthode de construction de prompt"
+```
+
 ## Installation
 
 ```bash

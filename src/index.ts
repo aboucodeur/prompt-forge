@@ -1,5 +1,4 @@
 import * as fs from 'fs'; // Pour l'utilisation en environnement Node.js
-import { countTokens } from 'gpt-tokenizer';
 import { stripIndents } from './stripIndent';
 
 // --- Types pour une meilleure robustesse ---
@@ -197,11 +196,15 @@ export class PromptBuilder {
     }
 
     /**
-     * Estime le nombre de tokens du prompt final en utilisant gpt-tokenizer.
+     * Provides a basic estimation of tokens in the final prompt.
+     * Note: This is a simple estimation based on word count and may not be accurate.
+     * For more accurate token counting, consider using a dedicated tokenizer library.
      */
     public estimateTokens(): number {
         const finalPrompt = this.build();
-        return countTokens(finalPrompt);
+        // Rough estimation: 1 token ≈ 4 characters for English text
+        // This is a simple fallback, not as accurate as a proper tokenizer
+        return Math.ceil(finalPrompt.length / 4);
     }
 
     private injectDefaultsSection(): void {

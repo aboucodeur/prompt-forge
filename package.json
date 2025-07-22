@@ -1,13 +1,22 @@
 {
     "name": "@abouta/prompt-forge",
-    "version": "1.0.2",
+    "version": "1.0.6",
     "description": "A lightweight, zero-dependency library for building robust and maintainable LLM prompts in TypeScript.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "test": "jest",
-        "build": "tsc",
-        "prepare": "npm run build"
+        "build": "tsc && node build.js",
+        "build:dev": "tsc",
+        "build:prod": "node build.js",
+        "prepare": "npm run build",
+        "minify": "node build.js --minify",
+        "publish": "npm publish --access public",
+        "release": "standard-version",
+        "release:minor": "standard-version --release-as minor",
+        "release:major": "standard-version --release-as major",
+        "release:patch": "standard-version --release-as patch",
+        "release:first": "standard-version --first-release"
     },
     "repository": {
         "type": "git",
@@ -17,7 +26,6 @@
         "ai",
         "llm",
         "prompt",
-        "prompt-engineering",
         "typescript",
         "builder",
         "openai",
@@ -35,13 +43,13 @@
         "package.json",
         "LICENSE"
     ],
-    "dependencies": {
-        "gpt-tokenizer": "^3.0.1"
-    },
     "devDependencies": {
         "@types/jest": "^29.5.12",
         "@types/node": "^20.14.2",
+        "esbuild": "^0.21.5",
+        "esbuild-node-externals": "^1.8.0",
         "jest": "^29.7.0",
+        "standard-version": "^9.5.0",
         "ts-jest": "^29.1.4",
         "ts-node": "^10.9.2",
         "typescript": "^5.4.5"
