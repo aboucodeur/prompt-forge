@@ -1,24 +1,45 @@
 {
     "compilerOptions": {
+        // Target the ES2020 version of JavaScript
         "target": "ES2020",
+        // Use the CommonJS format for exports
         "module": "CommonJS",
+        // Generate TypeScript declaration files (.d.ts)
         "declaration": true,
+        "declarationDir": "./dist/",
+        // Generate TypeScript declaration files with source map links
         "declarationMap": true,
-        "sourceMap": true,
+        // Generate source map files
+        "sourceMap": false,
+        // Define the output folder for the compiled files
         "outDir": "./dist",
+        // Define the root folder for the source files
         "rootDir": "./src",
+        // Enable strict type checking
         "strict": true,
+        // Allow importing ES6 modules as CommonJS exports
         "esModuleInterop": true,
+        // Do not type check declaration files
         "skipLibCheck": true,
+        // Force the use of consistent file names
         "forceConsistentCasingInFileNames": true,
+        // Define the module resolution strategy
         "moduleResolution": "node",
+        // Allow importing JSON files
         "resolveJsonModule": true,
+        // Compile files in isolation (i.e., without considering imports)
         "isolatedModules": true,
+        // Report errors if variables are not used
         "noUnusedLocals": true,
+        // Report errors if parameters are not used
         "noUnusedParameters": true,
+        // Report errors if switch cases are not explicitly handled
         "noFallthroughCasesInSwitch": true,
+        // Report errors if functions do not explicitly return
         "noImplicitReturns": true,
+        // Report errors if types are not explicitly declared
         "noImplicitAny": true,
+        // Enforce null and undefined constraints
         "strictNullChecks": true
     },
     "include": ["src"],

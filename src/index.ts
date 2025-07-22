@@ -1,28 +1,13 @@
 import * as fs from 'fs'; // Pour l'utilisation en environnement Node.js
 import { stripIndents } from './stripIndent';
+import { DefaultValueSettings, OpenAIMessage, StructuredSectionTag } from './types/index.types';
 
-// --- Types pour une meilleure robustesse ---
-export type StructuredSectionTag =
-    | "system_constraints" | "message_formatting_info" | "artifact_info"
-    | "critical_rules" | "examples" | "output_constraints" | "data_processing_rules";
-
-export type OpenAIRole = "system" | "user" | "assistant";
-export interface OpenAIMessage {
-    role: OpenAIRole;
-    content: string;
-}
-
-interface DefaultValueSettings {
-    xmlTag: string; // xml tag name in dynamic args
-    sectionName: string;
-    instructions: string;
-}
 
 /**
- * Construit des prompts structurés et dynamiques pour les LLMs avec une API fluide.
+ * Build structured prompts as code
  */
 export class PromptBuilder {
-    private basePrompt: string;
+    private basePrompt: string;  // provide by user 
     private isStructured: boolean;
     private dynamicArgs: Record<string, string> = {};
     private sections: Partial<Record<StructuredSectionTag, string>> = {};
@@ -230,58 +215,3 @@ export class PromptBuilder {
         return this;
     }
 }
-
-// --- EXEMPLE D'UTILISATION COMPLET ---
-// async function main() {
-//     console.log("--- Démonstration de PromptBuilder ---");
-
-//     // Simule un fichier prompt.txt
-//     const promptTemplate = "Tâche: {{task_name}}\n\nContexte: {{context}}\n\nQuestion de l'utilisateur: {{user_query}}\n\n{{dvao}}";
-
-//     const hasSpecificRules = true;
-//     const examples = [
-//         { query: "C'est génial", response: `{ "sentiment": "positif" }` },
-//         { query: "Je suis déçu", response: `{ "sentiment": "négatif" }` }
-//     ];
-
-//     try {
-//         const builder = new PromptBuilder(promptTemplate, true) // Activer le mode structuré
-//             .addArgument("task_name", "Analyse de Sentiment en JSON")
-//             .withArguments({
-//                 context: "L'utilisateur est un client évaluant un produit.",
-//                 user_query: "Le service client était lent, mais le produit est de haute qualité."
-//             })
-//             .addSectionIf(hasSpecificRules, "critical_rules", "La réponse DOIT être uniquement un objet JSON valide.")
-//             .addExamples(examples)
-//             .addDefault("Si le sentiment est mixte, prioriser l'aspect le plus fort.")
-//             .addDefaultIf(true, "Le score de confiance doit être inclus si disponible.");
-
-//         // 1. Construire le prompt final
-//         const finalPrompt = builder.build();
-//         console.log("\n--- PROMPT FINAL CONSTRUIT ---\n");
-//         console.log(finalPrompt);
-
-//         // 2. Estimer les tokens
-//         const tokenCount = builder.estimateTokens();
-//         console.log(`\n--- ESTIMATION DES TOKENS ---\n${tokenCount} tokens`);
-
-//         // 3. Formater pour une API
-//         // Note: Pour une implémentation réelle de buildForOpenAI, il faudrait une copie plus profonde du builder.
-//         // Cet exemple est conceptuellement simplifié.
-//         // const openAIMessages = builder.buildForOpenAI();
-//         // console.log("\n--- FORMAT OPENAI ---\n");
-//         // console.log(JSON.stringify(openAIMessages, null, 2));
-
-//     } catch (error) {
-//         console.error("\n--- ERREUR ---\n", error);
-//     }
-
-//     // Exemple d'erreur
-//     console.log("\n--- DÉMONSTRATION DE L'ERREUR DE VALIDATION ---");
-//     try {
-//         const errorBuilder = new PromptBuilder("Tâche: {{task_name}}");
-//         errorBuilder.build();
-//     } catch (error : Error) {
-//         console.error(error?.message);
-//     }
-// }

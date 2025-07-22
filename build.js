@@ -2,7 +2,7 @@ const esbuild = require('esbuild');
 const { nodeExternalsPlugin } = require('esbuild-node-externals');
 
 const buildConfig = {
-  entryPoints: ['src/index.ts'],
+  entryPoints: ['src/index.ts'], // it support typescript
   bundle: true,
   minify: true,
   sourcemap: true,
