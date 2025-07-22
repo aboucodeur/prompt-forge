@@ -18,13 +18,13 @@ Managing complex prompts as simple strings is messy and error-prone. Heavy frame
 ## Installation
 
 ```bash
-npm install @softia/prompt-forge
+npm install @abouta/prompt-forge
 ```
 
 ## Usage
 
 ```typescript
-import { PromptBuilder } from "@softia/prompt-forge";
+import { PromptBuilder } from "@abouta/prompt-forge";
 
 const prompt = new PromptBuilder(`
     Your are a helpful assistant and you role is to answer the user query.

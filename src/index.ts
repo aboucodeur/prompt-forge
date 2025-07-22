@@ -45,7 +45,6 @@ export class PromptBuilder {
 
         if (this.isStructured) {
             this.basePrompt += stripIndents`
-        
         {{system_constraints}}
         {{message_formatting_info}}
         {{artifact_info}}
