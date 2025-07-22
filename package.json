@@ -1,6 +1,6 @@
 {
     "name": "@abouta/prompt-forge",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A lightweight, zero-dependency library for building robust and maintainable LLM prompts in TypeScript.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
