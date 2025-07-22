@@ -26,9 +26,9 @@
     "author": "Softia <codeurabou123@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/votre-nom-github/prompt-forge/issues"
+        "url": "https://github.com/aboucodeur/prompt-forge/issues"
     },
-    "homepage": "https://github.com/votre-nom-github/prompt-forge#readme",
+    "homepage": "https://github.com/aboucodeur/prompt-forge#readme",
     "files": [
         "dist",
         "README.md",
