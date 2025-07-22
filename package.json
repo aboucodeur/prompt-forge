@@ -1,6 +1,6 @@
 {
     "name": "@abouta/prompt-forge",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "A lightweight, zero-dependency library for building robust and maintainable LLM prompts in TypeScript.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -30,7 +30,10 @@
     },
     "homepage": "https://github.com/votre-nom-github/prompt-forge#readme",
     "files": [
-        "dist"
+        "dist",
+        "README.md",
+        "package.json",
+        "LICENSE"
     ],
     "dependencies": {
         "gpt-tokenizer": "^3.0.1"
