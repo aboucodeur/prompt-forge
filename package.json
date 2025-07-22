@@ -1,0 +1,46 @@
+{
+    "name": "@softia/prompt-forge",
+    "version": "1.0.0",
+    "description": "A lightweight, zero-dependency library for building robust and maintainable LLM prompts in TypeScript.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "test": "jest",
+        "build": "tsc",
+        "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aboucodeur/prompt-forge.git"
+    },
+    "keywords": [
+        "ai",
+        "llm",
+        "prompt",
+        "prompt-engineering",
+        "typescript",
+        "builder",
+        "openai",
+        "anthropic"
+    ],
+    "author": "Softia <codeurabou123@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/votre-nom-github/prompt-forge/issues"
+    },
+    "homepage": "https://github.com/votre-nom-github/prompt-forge#readme",
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "gpt-tokenizer": "^3.0.1"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.14.2",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.4",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.5"
+    }
+}
