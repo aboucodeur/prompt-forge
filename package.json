@@ -11,12 +11,14 @@
         "build:prod": "rm -rf dist; node build.js",
         "prepare": "npm run build",
         "minify": "node build.js --minify",
+        "prepublishOnly": "npm run build",
         "publish": "npm publish --access public",
-        "release": "standard-version",
-        "release:minor": "standard-version --release-as minor",
-        "release:major": "standard-version --release-as major",
-        "release:patch": "standard-version --release-as patch",
-        "release:first": "standard-version --first-release"
+        "release": "standard-version --no-verify",
+        "release:minor": "standard-version --release-as minor --no-verify",
+        "release:major": "standard-version --release-as major --no-verify",
+        "release:patch": "standard-version --release-as patch --no-verify",
+        "release:first": "standard-version --first-release --no-verify",
+        "postrelease": "npm run build && npm publish"
     },
     "repository": {
         "type": "git",

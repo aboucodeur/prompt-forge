@@ -4,6 +4,10 @@
 ![license](https://img.shields.io/npm/l/@abouta/prompt-forge)
 ![size](https://img.shields.io/bundlephobia/minzip/@abouta/prompt-forge)
 
+<div align="center" style="margin-bottom: 20px;">
+    <img src="./logo.png" alt="PF-LOGO" width="30%" />
+</div>
+
 A lightweight, zero-dependency library for building robust and maintainable LLM prompts in TypeScript.
 
 ## Why Prompt Forge?
