@@ -1,8 +1,8 @@
 # Prompt Forge
 
-![npm](https://img.shields.io/npm/v/@votre-nom-npm/prompt-forge)
-![license](https://img.shields.io/npm/l/@votre-nom-npm/prompt-forge)
-![size](https://img.shields.io/bundlephobia/minzip/@votre-nom-npm/prompt-forge)
+![npm](https://img.shields.io/npm/v/@abouta/prompt-forge)
+![license](https://img.shields.io/npm/l/@abouta/prompt-forge)
+![size](https://img.shields.io/bundlephobia/minzip/@abouta/prompt-forge)
 
 A lightweight, zero-dependency library for building robust and maintainable LLM prompts in TypeScript.
 
